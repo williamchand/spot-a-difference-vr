@@ -19,7 +19,7 @@ var removeObject = [];
 var showObject = [];
 var answer = [];
 var answered = [];
-var objectList = ['dog', 'cat', 't0', 't1', 't2', 't3', 't4', 't5', 't6', 't7'];
+var objectList = ['dog', 'cat', 'chicken', 'bird', 'crocodile', 'lion', 'tiger', 'elephant', 'giraffe', 'duck'];
 var objectFiltered = [];
 AFRAME.registerComponent('hello-world', {
   init: function () {
@@ -165,6 +165,54 @@ function createObject(objectType) {
       object.setAttribute("scale", "0.1 0.1 0.1");
       object.setAttribute("gltf-model", '#cat');
       object.setAttribute('id', 'cat-entity');
+      break;
+    case "chicken":
+      object.setAttribute("position", "-3 1 -5");
+      // object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#chicken');
+      object.setAttribute('id', 'chicken-entity');
+      break;
+    case "bird":
+      object.setAttribute("position", "6 1 -5");
+      // object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#bird');
+      object.setAttribute('id', 'bird-entity');
+      break;
+    case "crocodile":
+      object.setAttribute("position", "-6 1 -5");
+      // object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#crocodile');
+      object.setAttribute('id', 'crocodile-entity');
+      break;
+    case "lion":
+      object.setAttribute("position", "-3 1 -5");
+      object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#lion');
+      object.setAttribute('id', 'lion-entity');
+      break;
+    case "tiger":
+      object.setAttribute("position", "-3 1 -5");
+      // object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#tiger');
+      object.setAttribute('id', 'tiger-entity');
+      break;
+    case "giraffe":
+      object.setAttribute("position", "-3 1 -5");
+      // object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#giraffe');
+      object.setAttribute('id', 'giraffe-entity');
+      break;
+    case "duck":
+      object.setAttribute("position", "-3 1 -5");
+      // object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#duck');
+      object.setAttribute('id', 'duck-entity');
+      break;
+    case "elephant":
+      object.setAttribute("position", "-3 1 -5");
+      // object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#elephant');
+      object.setAttribute('id', 'elephant-entity');
       break;
   }
   return object;
