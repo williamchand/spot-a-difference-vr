@@ -10,9 +10,14 @@
 
 <body>
   <a-scene>
+    <a-assets>
+      <a-asset-item id="dog" src="assets/dog/scene.gltf"></a-asset-item>
+      <a-asset-item id="cat" src="assets/cat/scene.gltf"></a-asset-item>
+    </a-assets>
+    <a-entity hello-world></a-entity>
     <a-entity
               id="text-object"
-              text="value: Start the game by saying: 'Hey Gizmo, Start'; color: #FAFAFA; width: 5; anchor: align"
+              text="value: Start the game by saying: 'Hey Gizmo, Start game'; color: #FAFAFA; width: 5; anchor: align"
               position="-2.5 0.2 -3"
               scale="1.5 1.5 1.5"
               error-message

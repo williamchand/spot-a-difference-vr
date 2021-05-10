@@ -14,6 +14,14 @@ const TOKEN = "JA5ACRJCVXTMZBSIQAHLT6TFDPLQ5D53";
 // Set your wake word
 const WAKE_WORD = "gizmo";
 
+AFRAME.registerComponent('hello-world', {
+  init: function () {
+    console.log('Hello, World!');
+    let scene = document.querySelector('a-scene');
+    let object = createObject("dog");
+    scene.append(object);
+  }
+});
 // Component to set error message when the Wit.ai token has not been updated
 AFRAME.registerComponent('error-message', {
   init: () => {
@@ -43,7 +51,7 @@ AFRAME.registerComponent('voice-command', {
         // Exit the function if the wake word was not triggered to respect user privacy
         if (!transcript.includes(`hey ${WAKE_WORD}`)) {
           // Provide the user with a suggestion on voice commands they can say
-          textEl.setAttribute("text", `value:Try saying: 'Hey ${WAKE_WORD}, add a box'`);
+          textEl.setAttribute("text", `value:Try saying: 'Hey ${WAKE_WORD}, Start game'`);
           return;
         }
 
@@ -70,21 +78,15 @@ AFRAME.registerComponent('voice-command', {
 // Function for creating 3D objects
 // Currently this function only supports box, cylinder, and sphere at fix positions
 function createObject(objectType) {
-  let object = document.createElement(`a-${objectType}`);
-  if (objectType === "box") {
-    object.setAttribute('color', 'red');
-    object.setAttribute('position', '0 2 -5');
-    object.setAttribute('rotation', '0 45 45');
-    object.setAttribute('scale', '2 2 2');
-  } else if (objectType === "cylinder") {
-    object.setAttribute('color', '#FF9500');
-    object.setAttribute('height', '2');
-    object.setAttribute('radius', '0.75');
-    object.setAttribute('position', '3 1 -5');
-  } else if (objectType === "sphere") {
-    object.setAttribute('position', "0 1.25 -5");
-    object.setAttribute('position', "1.25");
-    object.setAttribute('color', '#EF2D5E');
+  let object = document.createElement(`a-entity`);
+  if (objectType === "dog") {
+    object.setAttribute("position", "0 2 -5");
+    object.setAttribute("gltf-model", '#dog');
+    object.setAttribute('id', 'dog-entity');
+  } else if (objectType === "cat") {
+    object.setAttribute("position", "0 1 -5");
+    object.setAttribute("gltf-model", '#cat');
+    object.setAttribute('id', 'cat-entity');
   }
   return object;
 }
