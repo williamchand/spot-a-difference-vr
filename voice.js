@@ -185,31 +185,31 @@ function createObject(objectType) {
       object.setAttribute('id', 'crocodile-entity');
       break;
     case "lion":
-      object.setAttribute("position", "-3 1 -5");
+      object.setAttribute("position", "-9 1 -5");
       object.setAttribute("scale", "0.1 0.1 0.1");
       object.setAttribute("gltf-model", '#lion');
       object.setAttribute('id', 'lion-entity');
       break;
     case "tiger":
-      object.setAttribute("position", "-3 1 -5");
+      object.setAttribute("position", "9 1 -5");
       // object.setAttribute("scale", "0.1 0.1 0.1");
       object.setAttribute("gltf-model", '#tiger');
       object.setAttribute('id', 'tiger-entity');
       break;
     case "giraffe":
-      object.setAttribute("position", "-3 1 -5");
+      object.setAttribute("position", "12 1 -5");
       // object.setAttribute("scale", "0.1 0.1 0.1");
       object.setAttribute("gltf-model", '#giraffe');
       object.setAttribute('id', 'giraffe-entity');
       break;
     case "duck":
-      object.setAttribute("position", "-3 1 -5");
+      object.setAttribute("position", "-12 1 -5");
       // object.setAttribute("scale", "0.1 0.1 0.1");
       object.setAttribute("gltf-model", '#duck');
       object.setAttribute('id', 'duck-entity');
       break;
     case "elephant":
-      object.setAttribute("position", "-3 1 -5");
+      object.setAttribute("position", "15 1 -5");
       // object.setAttribute("scale", "0.1 0.1 0.1");
       object.setAttribute("gltf-model", '#elephant');
       object.setAttribute('id', 'elephant-entity');
