@@ -1,0 +1,46 @@
+{
+    "utterances": [
+        {
+            "text": "add a box",
+            "entities": [
+                {
+                    "entity": "object:object",
+                    "start": 6,
+                    "end": 9,
+                    "body": "box",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "add_object"
+        },
+        {
+            "text": "drop a sphere",
+            "entities": [
+                {
+                    "entity": "object:object",
+                    "start": 7,
+                    "end": 13,
+                    "body": "sphere",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "add_object"
+        },
+        {
+            "text": "place a cylinder",
+            "entities": [
+                {
+                    "entity": "object:object",
+                    "start": 8,
+                    "end": 16,
+                    "body": "cylinder",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "add_object"
+        }
+    ]
+}

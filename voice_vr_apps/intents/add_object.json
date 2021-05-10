@@ -1,0 +1,6 @@
+{
+    "name": "add_object",
+    "entities": [
+        "object:object"
+    ]
+}

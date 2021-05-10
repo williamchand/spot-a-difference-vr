@@ -1,0 +1,7 @@
+{
+    "version": 20200513,
+    "zip-command": "zip voice_vr_apps.zip voice_vr_apps\/app.json voice_vr_apps\/entities\/*.json voice_vr_apps\/intents\/*.json voice_vr_apps\/traits\/*.json voice_vr_apps\/utterances\/*.json",
+    "name": "voice_vr_apps",
+    "lang": "en",
+    "timezone": "America\/Los_Angeles"
+}

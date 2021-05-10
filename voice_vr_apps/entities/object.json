@@ -1,0 +1,30 @@
+{
+    "name": "object",
+    "roles": [
+        "object"
+    ],
+    "lookups": [
+        "free-text",
+        "keywords"
+    ],
+    "keywords": [
+        {
+            "keyword": "box",
+            "synonyms": [
+                "box"
+            ]
+        },
+        {
+            "keyword": "cylinder",
+            "synonyms": [
+                "cylinder"
+            ]
+        },
+        {
+            "keyword": "sphere",
+            "synonyms": [
+                "sphere"
+            ]
+        }
+    ]
+}
