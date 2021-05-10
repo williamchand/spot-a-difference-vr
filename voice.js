@@ -13,22 +13,26 @@ const TOKEN = "JA5ACRJCVXTMZBSIQAHLT6TFDPLQ5D53";
 
 // Set your wake word
 const WAKE_WORD = "gizmo";
+var globalTime = new Date();
 
 AFRAME.registerComponent('hello-world', {
   init: function () {
-    console.log('Hello, World!');
     let scene = document.querySelector('a-scene');
-    let object = createObject("dog");
-    scene.append(object);
+    objects = ['dog', 'cat']
+    objects.forEach(element => {
+      let object = createObject(element);
+      scene.append(object);
+    });
   }
 });
 // Component to set error message when the Wit.ai token has not been updated
 AFRAME.registerComponent('error-message', {
   init: () => {
-    if (TOKEN === "JA5ACRJCVXTMZBSIQAHLT6TFDPLQ5D53") {
+    if (TOKEN === "REPLACE TOKEN") {
       let textEl = document.querySelector('#text-object');
       textEl.setAttribute("text", `value: UPDATE CODE WITH YOUR WIT.AI TOKEN`);
     }
+    globalTime = new Date();
   }
 });
 
@@ -79,14 +83,35 @@ AFRAME.registerComponent('voice-command', {
 // Currently this function only supports box, cylinder, and sphere at fix positions
 function createObject(objectType) {
   let object = document.createElement(`a-entity`);
-  if (objectType === "dog") {
-    object.setAttribute("position", "0 2 -5");
-    object.setAttribute("gltf-model", '#dog');
-    object.setAttribute('id', 'dog-entity');
-  } else if (objectType === "cat") {
-    object.setAttribute("position", "0 1 -5");
-    object.setAttribute("gltf-model", '#cat');
-    object.setAttribute('id', 'cat-entity');
+  switch (objectType) {
+    case "dog":
+      object.setAttribute("position", "0 2 -5");
+      object.setAttribute("gltf-model", '#dog');
+      object.setAttribute('id', 'dog-entity');
+      break;
+    case "cat":
+      object.setAttribute("position", "3 1 -5");
+      // object.setAttribute('rotation', '0 45 45');
+      object.setAttribute("scale", "0.1 0.1 0.1");
+      object.setAttribute("gltf-model", '#cat');
+      object.setAttribute('id', 'cat-entity');
+      break;
   }
   return object;
+}
+
+AFRAME.registerComponent('timertext', {
+  tick: function (time, timeDelta) {
+    var el_ttimer = document.querySelector('#timertext');
+    var d = millisToMinutesAndSeconds(new Date() - globalTime);
+    el_ttimer.setAttribute('text', 'value: ' + d + '; color: #FAFAFA; width: 5; anchor: align');
+  }
+});
+
+const millisToMinutesAndSeconds = (millis) => {
+  var minutes = Math.floor(millis / 60000);
+  var seconds = ((millis % 60000) / 1000).toFixed(0);
+  //ES6 interpolated literals/template literals 
+  //If seconds is less than 10 put a zero in front.
+  return `${minutes}:${(seconds < 10 ? "0" : "")}${seconds}`;
 }
